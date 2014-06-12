@@ -18,13 +18,13 @@ class Fabric8TaskTest extends Specification {
     def setup() {
         project = ProjectBuilder.builder().build()
         task = project.task('Fabric8GradleTask', type: Fabric8Task)
-        assert task instanceof Fabric8Task
     }
 
     def "createProfileDir"() {
         when:
             task.createProfileDir()
         then:
+            assert task instanceof Fabric8Task
             project.file("build/profile").exists()
     }
 }
