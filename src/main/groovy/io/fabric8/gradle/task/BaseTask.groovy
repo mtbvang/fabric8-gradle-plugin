@@ -1,5 +1,6 @@
 package io.fabric8.gradle.task
 
+import io.fabric8.gradle.util.ProfileUtil
 import org.gradle.api.DefaultTask
 
 /**
@@ -8,4 +9,5 @@ import org.gradle.api.DefaultTask
  */
 class BaseTask extends DefaultTask {
     def destDir = project.buildDir
+
 }
