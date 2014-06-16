@@ -16,7 +16,7 @@ class Fabric8Plugin implements Plugin<Project>{
         // Set up plugin properties
         project.extensions.create("fabric8", Fabric8PluginExtension)
 
-        project.task('configure', dependsOn: 'processResources') << {
+        project.task('configure', dependsOn: 'processResources') {
             logger.debug("Configuring plugin using properties ${project.extensions.fabric8}")
         }
         // Call tasks

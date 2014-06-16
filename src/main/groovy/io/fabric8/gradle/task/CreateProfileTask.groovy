@@ -9,10 +9,10 @@ import org.gradle.api.tasks.TaskAction
 class CreateProfileTask extends BaseTask {
 
     @TaskAction
-    def createProfile() {
+    def createProfileDirectories() {
         def fabric8 = project.fabric8
-
         def profilePath = destDir.path + "/" + ProfileUtil.parseProfilenameIntoPath(fabric8.profile)
+
         logger.info("Creating profile directories: ${profilePath}")
         if(!project.file(profilePath).exists()) project.file(profilePath).mkdirs()
     }
