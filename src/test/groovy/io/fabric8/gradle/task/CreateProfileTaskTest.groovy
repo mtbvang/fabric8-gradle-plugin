@@ -1,5 +1,6 @@
 package io.fabric8.gradle.task
 
+import io.fabric8.gradle.plugin.Fabric8PluginExtension
 import org.gradle.testfixtures.ProjectBuilder
 import spock.lang.Shared
 import spock.lang.Specification
@@ -18,15 +19,15 @@ class CreateProfileTaskTest extends Specification {
     def setup() {
         project = ProjectBuilder.builder().build()
         task = project.task('Fabric8GradleTask', type: CreateProfileTask) {
-            profilename = "my-test-profile"
+            project.fabric8 = new Fabric8PluginExtension(profile: "my-test-profile")
         }
     }
 
     def "createProfileDir"() {
         when:
-            task.createProfileDir()
+            task.createProfile()
         then:
             assert task instanceof CreateProfileTask
-            project.file("build/profile").exists()
+            project.file(project.buildDir.path + "/my/test/profile").exists()
     }
 }

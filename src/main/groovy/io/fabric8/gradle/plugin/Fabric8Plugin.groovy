@@ -10,9 +10,19 @@ import org.gradle.api.Project
  */
 class Fabric8Plugin implements Plugin<Project>{
 
+    void apply(Project project) {
+        def logger = project.logger
 
-    void apply(Project target) {
-        target.task('fabric8', type: CreateProfileTask)
+        // Set up plugin properties
+        project.extensions.create("fabric8", Fabric8PluginExtension)
+
+        project.task('configure', dependsOn: 'processResources') << {
+            logger.debug("Configuring plugin using properties ${project.extensions.fabric8}")
+        }
+        // Call tasks
+        project.task('createProfile', type: CreateProfileTask, dependsOn: 'configure') {
+            logger.debug("Creating createProfile task")
+        }
     }
 
 }
