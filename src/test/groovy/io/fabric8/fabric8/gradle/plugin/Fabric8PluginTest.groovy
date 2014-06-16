@@ -1,5 +1,6 @@
-package com.bisnode.fabric8.gradle.plugin
-import com.bisnode.fabric8.gradle.task.Fabric8Task
+package io.fabric8.fabric8.gradle.plugin
+
+import io.fabric8.fabric8.gradle.task.CreateProfileTask
 import org.gradle.testfixtures.ProjectBuilder
 import spock.lang.Specification
 /**
@@ -19,7 +20,7 @@ class Fabric8PluginTest extends Specification {
 
     def "Apply"() {
         expect:
-        assert project.tasks.fabric8 instanceof Fabric8Task
+        assert project.tasks.fabric8 instanceof CreateProfileTask
 
     }
 }

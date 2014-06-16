@@ -1,6 +1,6 @@
-package com.bisnode.fabric8.gradle.plugin
+package io.fabric8.fabric8.gradle.plugin
 
-import com.bisnode.fabric8.gradle.task.Fabric8Task
+import io.fabric8.fabric8.gradle.task.CreateProfileTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -12,7 +12,7 @@ class Fabric8Plugin implements Plugin<Project>{
 
 
     void apply(Project target) {
-        target.task('fabric8', type: Fabric8Task)
+        target.task('fabric8', type: CreateProfileTask)
     }
 
 }
