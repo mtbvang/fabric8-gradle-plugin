@@ -1,4 +1,4 @@
-package io.fabric8.fabric8.gradle.util
+package io.fabric8.gradle.util
 
 import spock.lang.Specification
 import spock.lang.Unroll

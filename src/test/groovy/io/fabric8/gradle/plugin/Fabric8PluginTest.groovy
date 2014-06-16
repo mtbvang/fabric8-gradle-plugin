@@ -1,6 +1,6 @@
-package io.fabric8.fabric8.gradle.plugin
+package io.fabric8.gradle.plugin
 
-import io.fabric8.fabric8.gradle.task.CreateProfileTask
+import io.fabric8.gradle.task.CreateProfileTask
 import org.gradle.testfixtures.ProjectBuilder
 import spock.lang.Specification
 /**

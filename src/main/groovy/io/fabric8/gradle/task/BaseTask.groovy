@@ -1,4 +1,4 @@
-package io.fabric8.fabric8.gradle.task
+package io.fabric8.gradle.task
 
 import org.gradle.api.DefaultTask
 
