@@ -18,7 +18,7 @@ class Fabric8PluginTest extends BaseSpecification {
 
     def setup() {
         project = ProjectBuilder.builder().withName("fabric8").build()
-        project.apply plugin: 'fabric8'
+        project.apply plugin: Fabric8Plugin
     }
 
     def "test apply plugin"() {
