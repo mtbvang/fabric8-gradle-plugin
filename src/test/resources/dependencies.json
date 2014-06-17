@@ -1,0 +1,1235 @@
+{ "profileId": "force-credit-integration2.war", "parentProfiles": [ "containers-tomcat" ], "rootDependency": {
+    "groupId": "com.bisnode.credit.force",
+    "artifactId": "force-credit-integration",
+    "version": "0.1.0-SNAPSHOT",
+    "type": "war",
+    "optional": false,
+    "children": [
+        {
+            "groupId": "org.codehaus.groovy",
+            "artifactId": "groovy-all",
+            "version": "2.3.1",
+            "type": "jar",
+            "scope": "compile",
+            "optional": false
+        },
+        {
+            "groupId": "org.springframework",
+            "artifactId": "spring-core",
+            "version": "4.0.5.RELEASE",
+            "type": "jar",
+            "scope": "compile",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "commons-logging",
+                    "artifactId": "commons-logging",
+                    "version": "1.1.3",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "org.springframework",
+            "artifactId": "spring-web",
+            "version": "4.0.5.RELEASE",
+            "type": "jar",
+            "scope": "compile",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "org.springframework",
+                    "artifactId": "spring-aop",
+                    "version": "4.0.5.RELEASE",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "aopalliance",
+                            "artifactId": "aopalliance",
+                            "version": "1.0",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-beans",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-core",
+                            "version": "4.0.5.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.springframework",
+                    "artifactId": "spring-beans",
+                    "version": "3.2.8.RELEASE",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-core",
+                            "version": "4.0.5.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.springframework",
+                    "artifactId": "spring-context",
+                    "version": "3.2.8.RELEASE",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-aop",
+                            "version": "4.0.5.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-beans",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-core",
+                            "version": "4.0.5.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-expression",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-core",
+                                    "version": "4.0.5.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.springframework",
+                    "artifactId": "spring-core",
+                    "version": "4.0.5.RELEASE",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "org.apache.camel",
+            "artifactId": "camel-cxf",
+            "version": "2.13.1",
+            "type": "jar",
+            "scope": "compile",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "org.apache.camel",
+                    "artifactId": "camel-core",
+                    "version": "2.13.0",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.slf4j",
+                            "artifactId": "slf4j-api",
+                            "version": "1.7.5",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "com.sun.xml.bind",
+                            "artifactId": "jaxb-impl",
+                            "version": "2.2.6",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.camel",
+                    "artifactId": "camel-spring",
+                    "version": "2.13.0",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.apache.camel",
+                            "artifactId": "camel-core",
+                            "version": "2.13.0",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-context",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-aop",
+                            "version": "4.0.5.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-tx",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-beans",
+                                    "version": "3.2.8.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-core",
+                                    "version": "4.0.5.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "com.sun.xml.bind",
+                            "artifactId": "jaxb-impl",
+                            "version": "2.2.6",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.camel",
+                    "artifactId": "camel-cxf-transport",
+                    "version": "2.13.0",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.apache.camel",
+                            "artifactId": "camel-core",
+                            "version": "2.13.0",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-bindings-soap",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-beans",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "com.sun.xml.bind",
+                            "artifactId": "jaxb-impl",
+                            "version": "2.2.6",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.cxf",
+                    "artifactId": "cxf-rt-frontend-jaxrs",
+                    "version": "2.7.11",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-api",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.codehaus.woodstox",
+                                    "artifactId": "woodstox-core-asl",
+                                    "version": "4.2.1",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false,
+                                    "children": [
+                                        {
+                                            "groupId": "org.codehaus.woodstox",
+                                            "artifactId": "stax2-api",
+                                            "version": "3.1.4",
+                                            "type": "jar",
+                                            "scope": "compile",
+                                            "optional": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "groupId": "org.apache.ws.xmlschema",
+                                    "artifactId": "xmlschema-core",
+                                    "version": "2.1.0",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.geronimo.specs",
+                                    "artifactId": "geronimo-javamail_1.4_spec",
+                                    "version": "1.7.1",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "wsdl4j",
+                                    "artifactId": "wsdl4j",
+                                    "version": "1.6.3",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-core",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-api",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "com.sun.xml.bind",
+                                    "artifactId": "jaxb-impl",
+                                    "version": "2.2.6",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.ws.xmlschema",
+                                    "artifactId": "xmlschema-core",
+                                    "version": "2.1.0",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "javax.ws.rs",
+                            "artifactId": "javax.ws.rs-api",
+                            "version": "2.0-m10",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-bindings-xml",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-api",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-transports-http",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-api",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-rt-core",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.cxf",
+                    "artifactId": "cxf-rt-frontend-jaxws",
+                    "version": "2.7.11",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "xml-resolver",
+                            "artifactId": "xml-resolver",
+                            "version": "1.2",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "asm",
+                            "artifactId": "asm",
+                            "version": "3.3.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-api",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-core",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-bindings-soap",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-bindings-xml",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-frontend-simple",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-api",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-rt-core",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-rt-bindings-soap",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-transports-http",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-ws-addr",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-api",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-rt-bindings-soap",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-rt-ws-policy",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false,
+                                    "children": [
+                                        {
+                                            "groupId": "org.apache.cxf",
+                                            "artifactId": "cxf-api",
+                                            "version": "2.7.11",
+                                            "type": "jar",
+                                            "scope": "compile",
+                                            "optional": false
+                                        },
+                                        {
+                                            "groupId": "org.apache.cxf",
+                                            "artifactId": "cxf-rt-core",
+                                            "version": "2.7.11",
+                                            "type": "jar",
+                                            "scope": "compile",
+                                            "optional": false
+                                        },
+                                        {
+                                            "groupId": "org.apache.neethi",
+                                            "artifactId": "neethi",
+                                            "version": "3.0.3",
+                                            "type": "jar",
+                                            "scope": "compile",
+                                            "optional": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.cxf",
+                    "artifactId": "cxf-rt-rs-security-oauth",
+                    "version": "2.7.11",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-frontend-jaxrs",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "net.oauth.core",
+                            "artifactId": "oauth-provider",
+                            "version": "20100527",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "net.oauth.core",
+                                    "artifactId": "oauth",
+                                    "version": "20100527",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.springframework",
+                    "artifactId": "spring-core",
+                    "version": "4.0.5.RELEASE",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "org.springframework",
+                    "artifactId": "spring-beans",
+                    "version": "3.2.8.RELEASE",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "org.springframework",
+                    "artifactId": "spring-context",
+                    "version": "3.2.8.RELEASE",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "org.apache.cxf",
+                    "artifactId": "cxf-rt-features-clustering",
+                    "version": "2.7.11",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-api",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-core",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.cxf",
+                    "artifactId": "cxf-rt-bindings-soap",
+                    "version": "2.7.11",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-api",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.cxf",
+                            "artifactId": "cxf-rt-databinding-jaxb",
+                            "version": "2.7.11",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-api",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.cxf",
+                                    "artifactId": "cxf-rt-core",
+                                    "version": "2.7.11",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "com.sun.xml.bind",
+                                    "artifactId": "jaxb-impl",
+                                    "version": "2.2.6",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "groupId": "com.sun.xml.bind",
+                    "artifactId": "jaxb-impl",
+                    "version": "2.2.6",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "org.apache.camel",
+            "artifactId": "camel-groovy",
+            "version": "2.13.1",
+            "type": "jar",
+            "scope": "compile",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "org.apache.camel",
+                    "artifactId": "camel-core",
+                    "version": "2.13.0",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "org.codehaus.groovy",
+                    "artifactId": "groovy-all",
+                    "version": "2.3.1",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "com.sun.xml.bind",
+                    "artifactId": "jaxb-impl",
+                    "version": "2.2.6",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "org.apache.activemq",
+            "artifactId": "activemq-camel",
+            "version": "5.9.1",
+            "type": "jar",
+            "scope": "compile",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "org.slf4j",
+                    "artifactId": "slf4j-api",
+                    "version": "1.7.5",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "org.apache.camel",
+                    "artifactId": "camel-jms",
+                    "version": "2.13.0",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.apache.camel",
+                            "artifactId": "camel-core",
+                            "version": "2.13.0",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.camel",
+                            "artifactId": "camel-spring",
+                            "version": "2.13.0",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-jms",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-aop",
+                                    "version": "4.0.5.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-beans",
+                                    "version": "3.2.8.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-context",
+                                    "version": "3.2.8.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-core",
+                                    "version": "4.0.5.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.springframework",
+                                    "artifactId": "spring-tx",
+                                    "version": "3.2.8.RELEASE",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-context",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-tx",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.springframework",
+                            "artifactId": "spring-beans",
+                            "version": "3.2.8.RELEASE",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "com.sun.xml.bind",
+                            "artifactId": "jaxb-impl",
+                            "version": "2.2.6",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.activemq",
+                    "artifactId": "activemq-spring",
+                    "version": "5.9.1",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.slf4j",
+                            "artifactId": "slf4j-api",
+                            "version": "1.7.5",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.xbean",
+                            "artifactId": "xbean-spring",
+                            "version": "3.15",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "commons-logging",
+                                    "artifactId": "commons-logging",
+                                    "version": "1.0.3",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "org.apache.activemq",
+                            "artifactId": "activemq-broker",
+                            "version": "5.9.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false,
+                            "children": [
+                                {
+                                    "groupId": "org.apache.activemq",
+                                    "artifactId": "activemq-client",
+                                    "version": "5.9.1",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false
+                                },
+                                {
+                                    "groupId": "org.apache.activemq",
+                                    "artifactId": "activemq-openwire-legacy",
+                                    "version": "5.9.1",
+                                    "type": "jar",
+                                    "scope": "compile",
+                                    "optional": false,
+                                    "children": [
+                                        {
+                                            "groupId": "org.apache.activemq",
+                                            "artifactId": "activemq-client",
+                                            "version": "5.9.1",
+                                            "type": "jar",
+                                            "scope": "compile",
+                                            "optional": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "groupId": "org.apache.activemq",
+                            "artifactId": "activemq-pool",
+                            "version": "5.9.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.geronimo.specs",
+                            "artifactId": "geronimo-jta_1.0.1B_spec",
+                            "version": "1.0.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "commons-pool",
+                            "artifactId": "commons-pool",
+                            "version": "1.6",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.activemq",
+                    "artifactId": "activemq-pool",
+                    "version": "5.9.1",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "org.apache.activemq",
+            "artifactId": "activemq-pool",
+            "version": "5.9.1",
+            "type": "jar",
+            "scope": "compile",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "org.slf4j",
+                    "artifactId": "slf4j-api",
+                    "version": "1.7.5",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "org.apache.activemq",
+                    "artifactId": "activemq-jms-pool",
+                    "version": "5.9.1",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.slf4j",
+                            "artifactId": "slf4j-api",
+                            "version": "1.7.5",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.geronimo.specs",
+                            "artifactId": "geronimo-jms_1.1_spec",
+                            "version": "1.1.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.geronimo.specs",
+                            "artifactId": "geronimo-jta_1.0.1B_spec",
+                            "version": "1.0.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "commons-pool",
+                            "artifactId": "commons-pool",
+                            "version": "1.6",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.activemq",
+                    "artifactId": "activemq-client",
+                    "version": "5.9.1",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.slf4j",
+                            "artifactId": "slf4j-api",
+                            "version": "1.7.5",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.geronimo.specs",
+                            "artifactId": "geronimo-jms_1.1_spec",
+                            "version": "1.1.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.fusesource.hawtbuf",
+                            "artifactId": "hawtbuf",
+                            "version": "1.10",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        },
+                        {
+                            "groupId": "org.apache.geronimo.specs",
+                            "artifactId": "geronimo-j2ee-management_1.1_spec",
+                            "version": "1.0.1",
+                            "type": "jar",
+                            "scope": "compile",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.apache.geronimo.specs",
+                    "artifactId": "geronimo-jta_1.0.1B_spec",
+                    "version": "1.0.1",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                },
+                {
+                    "groupId": "commons-pool",
+                    "artifactId": "commons-pool",
+                    "version": "1.6",
+                    "type": "jar",
+                    "scope": "compile",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "org.spockframework",
+            "artifactId": "spock-core",
+            "version": "0.7-groovy-2.0",
+            "type": "jar",
+            "scope": "test",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "junit",
+                    "artifactId": "junit-dep",
+                    "version": "4.10",
+                    "type": "jar",
+                    "scope": "test",
+                    "optional": false,
+                    "children": [
+                        {
+                            "groupId": "org.hamcrest",
+                            "artifactId": "hamcrest-core",
+                            "version": "1.1",
+                            "type": "jar",
+                            "scope": "test",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "groupId": "org.codehaus.groovy",
+                    "artifactId": "groovy-all",
+                    "version": "2.3.1",
+                    "type": "jar",
+                    "scope": "test",
+                    "optional": false
+                },
+                {
+                    "groupId": "org.hamcrest",
+                    "artifactId": "hamcrest-core",
+                    "version": "1.3",
+                    "type": "jar",
+                    "scope": "test",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "junit",
+            "artifactId": "junit",
+            "version": "4.11",
+            "type": "jar",
+            "scope": "test",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "org.hamcrest",
+                    "artifactId": "hamcrest-core",
+                    "version": "1.3",
+                    "type": "jar",
+                    "scope": "test",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "groupId": "org.apache.camel",
+            "artifactId": "camel-test",
+            "version": "2.13.1",
+            "type": "jar",
+            "scope": "test",
+            "optional": false,
+            "children": [
+                {
+                    "groupId": "org.apache.camel",
+                    "artifactId": "camel-core",
+                    "version": "2.13.0",
+                    "type": "jar",
+                    "scope": "test",
+                    "optional": false
+                },
+                {
+                    "groupId": "junit",
+                    "artifactId": "junit",
+                    "version": "4.11",
+                    "type": "jar",
+                    "scope": "test",
+                    "optional": false
+                },
+                {
+                    "groupId": "com.sun.xml.bind",
+                    "artifactId": "jaxb-impl",
+                    "version": "2.2.6",
+                    "type": "jar",
+                    "scope": "test",
+                    "optional": false
+                }
+            ]
+        }
+    ]
+} }

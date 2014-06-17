@@ -1,5 +1,6 @@
 package io.fabric8.gradle.plugin
 
+import io.fabric8.gradle.task.CreateDependenciesTask
 import io.fabric8.gradle.task.CreateFabric8AgentPropertiesTask
 import io.fabric8.gradle.task.CreateProfileTask
 import org.gradle.api.Plugin
@@ -25,7 +26,10 @@ class Fabric8Plugin implements Plugin<Project>{
             logger.debug("Creating createProfile task")
         }
         project.task('createFabric8AgentProperties', type: CreateFabric8AgentPropertiesTask, dependsOn: 'createProfile') {
-            logger.debug("Creating CreateFabric8AgentPropertiesTask task")
+            logger.debug("Creating CreateFabric8AgentProperties task")
+        }
+        project.task('createDependencies', type: CreateDependenciesTask, dependsOn: 'processResources') {
+            logger.debug("Creating CreateDependencies task")
         }
     }
 
