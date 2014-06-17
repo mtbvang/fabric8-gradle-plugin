@@ -1,7 +1,6 @@
 package io.fabric8.gradle.task
 import io.fabric8.gradle.BaseSpecification
 import io.fabric8.gradle.plugin.Fabric8PluginExtension
-import org.gradle.api.tasks.bundling.War
 import org.gradle.testfixtures.ProjectBuilder
 /**
  * @author sigge
@@ -36,15 +35,4 @@ class CreateFabric8AgentPropertiesTaskTest extends BaseSpecification {
 
     }
 
-    def "test determine packaging should be jar"() {
-        expect:
-            assert "jar" == task.determinePackaging(project)
-    }
-
-    def "test determine packaging should be war"() {
-        given:
-            project.task('war', type: War)
-        expect:
-            assert "war" == task.determinePackaging(project)
-    }
 }
