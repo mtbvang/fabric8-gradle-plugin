@@ -32,7 +32,7 @@ class CreateDependenciesTaskTest extends BaseSpecification {
         given:
          def dependenciesFile = project.file(project.buildDir.path + "/dependencies.json")
         when:
-            task.createDependenciesFile()
+            task.buildDependenciesFile()
         then:
             assert dependenciesFile.exists()
             def result = new JsonSlurper().parseText(dependenciesFile.text)
