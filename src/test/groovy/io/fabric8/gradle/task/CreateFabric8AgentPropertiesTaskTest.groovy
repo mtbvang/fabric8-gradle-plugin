@@ -1,7 +1,6 @@
 package io.fabric8.gradle.task
 import io.fabric8.gradle.BaseSpecification
 import io.fabric8.gradle.plugin.Fabric8PluginExtension
-import org.gradle.testfixtures.ProjectBuilder
 /**
  * @author sigge
  * @since 2014-06-16 16:25
@@ -10,10 +9,7 @@ class CreateFabric8AgentPropertiesTaskTest extends BaseSpecification {
 
     def task
 
-    def project
-
     def setup() {
-        project = ProjectBuilder.builder().withName("fabric8-gradle-plugin").build()
         def createProfileTask = project.task('CreateProfileTask', type: CreateProfileTask) {
             project.ext.fabric8 = new Fabric8PluginExtension(profile: "my-test-profile")
         }

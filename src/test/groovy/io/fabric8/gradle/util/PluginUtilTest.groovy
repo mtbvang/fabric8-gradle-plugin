@@ -1,19 +1,13 @@
 package io.fabric8.gradle.util
-
+import io.fabric8.gradle.BaseSpecification
 import org.gradle.api.tasks.bundling.War
-import org.gradle.testfixtures.ProjectBuilder
-import spock.lang.Specification
 import spock.lang.Unroll
 /**
  * @author sigge
  * @since 2014-06-13 13:18
  */
-class PluginUtilTest extends Specification {
-    def project
+class PluginUtilTest extends BaseSpecification {
 
-    void setup() {
-        project = ProjectBuilder.builder().withName("fabric8-gradle-plugin").build()
-    }
 
     @Unroll("Profilename #profilename should give path #path")
     def "test parse profilename should return path"() {

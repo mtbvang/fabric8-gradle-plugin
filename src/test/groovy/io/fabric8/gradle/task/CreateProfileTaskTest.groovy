@@ -1,23 +1,15 @@
 package io.fabric8.gradle.task
-
+import io.fabric8.gradle.BaseSpecification
 import io.fabric8.gradle.plugin.Fabric8PluginExtension
-import org.gradle.testfixtures.ProjectBuilder
-import spock.lang.Shared
-import spock.lang.Specification
-
 /**
  * @author sigge
  * @since 2014-06-11 20:17
  */
-class CreateProfileTaskTest extends Specification {
+class CreateProfileTaskTest extends BaseSpecification {
 
     def task
 
-    @Shared
-    def project
-
     def setup() {
-        project = ProjectBuilder.builder().build()
         task = project.task('CreateProfileTask', type: CreateProfileTask) {
             project.ext.fabric8 = new Fabric8PluginExtension(profile: "my-test-profile")
         }

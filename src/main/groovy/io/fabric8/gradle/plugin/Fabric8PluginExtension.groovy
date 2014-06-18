@@ -12,6 +12,8 @@ class Fabric8PluginExtension {
 
     String profile
     String parentProfile = "default"
+    String group
+    String version
     String jolokiaUrl = "http://localhost:8181/jolokia"
     String features // space separated list
     String featureRepos // space separated list
