@@ -7,8 +7,9 @@ import org.gradle.api.tasks.OutputDirectory
  * @author sigge
  * @since 2014-06-13 11:25
  */
-class BaseTask extends DefaultTask {
+abstract class BaseTask extends DefaultTask {
     @OutputDirectory
     def File destDir = project.buildDir
+
 
 }

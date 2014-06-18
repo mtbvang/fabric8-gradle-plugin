@@ -2,6 +2,7 @@ package io.fabric8.gradle.task
 import groovy.text.GStringTemplateEngine
 import io.fabric8.gradle.util.PluginUtil
 import org.gradle.api.tasks.TaskAction
+
 /**
  * Creates the io.fabric8.agent.properties file
  * @author sigge

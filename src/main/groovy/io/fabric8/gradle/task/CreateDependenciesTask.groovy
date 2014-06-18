@@ -3,6 +3,7 @@ import groovy.json.JsonBuilder
 import io.fabric8.gradle.util.PluginUtil
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
+
 /**
  * @author sigge
  * @since 2014-06-11 20:16
