@@ -24,4 +24,33 @@ class PluginUtil {
     static def determinePackaging(Project project) {
         project.tasks.findByPath("war") != null ? "war" : "jar"
     }
+
+    /**
+     * Merge property files contents into a Property object
+     * @param files
+     * @return Property
+     */
+    static def mergePropertyFiles(List<File> files) {
+        def properties = new Properties()
+        files.each { file ->
+            def props = new Properties()
+            file.withInputStream { stream ->
+                props.load(stream)
+            }
+            properties.putAll(props)
+        }
+        properties
+    }
+
+    /**
+     * Merge property files contents into new Property file
+     * @param files
+     * @param dest destination file
+     */
+    static def mergePropertyFilesIntoFile(List<File> files, File dest) {
+        def properties = mergePropertyFiles(files)
+        dest.withWriter { writer ->
+            properties.store(writer, null)
+        }
+    }
 }

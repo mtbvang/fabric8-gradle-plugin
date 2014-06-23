@@ -31,4 +31,34 @@ class PluginUtilTest extends BaseSpecification {
         expect:
             assert "war" == PluginUtil.determinePackaging(project)
     }
+
+    def "Merge property files should give a map with propeyry key/values"() {
+        given:
+        // Could use GroovyClassLoader
+            def file1 = new File("src/test/resources/properties1.properties")
+            def file2 = new File("src/test/resources/properties2.properties")
+            def file3 = new File("src/test/resources/properties3.properties")
+        when:
+            def result = PluginUtil.mergePropertyFiles([file1, file2, file3])
+        then:
+            result == [avalue11: 'a value 111', avalue12: 'a value 12', avalue21: 'a value 211', avalue22: 'a value 22', avalue31: 'a value 31', avalue32: 'a value 32']
+
+    }
+    def "Merge property files into file should give a map with propetry key/values in the destination file"() {
+        given:
+        // Could use GroovyClassLoader
+            def dest = new File("build/tmp/test-merged.properties")
+            def file1 = new File("src/test/resources/properties1.properties")
+            def file2 = new File("src/test/resources/properties2.properties")
+            def file3 = new File("src/test/resources/properties3.properties")
+        when:
+            PluginUtil.mergePropertyFilesIntoFile([file1, file2, file3], dest)
+            def loadedProperties = new Properties()
+            dest.withInputStream { stream ->
+                loadedProperties.load(stream)
+            }
+        then:
+            loadedProperties.sort() == [avalue11: 'a value 111', avalue12: 'a value 12', avalue21: 'a value 211', avalue22: 'a value 22', avalue31: 'a value 31', avalue32: 'a value 32']
+
+    }
 }
