@@ -12,24 +12,33 @@ import org.gradle.api.Project
 class Fabric8Plugin implements Plugin<Project>{
 
     void apply(Project project) {
-        def logger = project.logger
-
         // Set up plugin properties
         project.extensions.create("fabric8", Fabric8PluginExtension)
+        Fabric8PluginConvention convention = new Fabric8PluginConvention(project)
+        project.convention.plugins.put("fabric8", convention)
 
         // Create tasks
+        createProfileDirectory(project)
+        createFabric8AgentProperties(project)
 
-        project.task('configure', dependsOn: 'processResources') {
-            logger.debug("Configuring plugin using properties ${project.extensions.fabric8}")
+        createDependencies(project)
+    }
+
+    def createProfileDirectory(Project project) {
+        project.task('createProfile', type: CreateProfileTask) {
+            project.logger.debug("Creating createProfile task")
         }
-        project.task('createProfile', type: CreateProfileTask, dependsOn: 'configure') {
-            logger.debug("Creating createProfile task")
-        }
+    }
+
+    def createFabric8AgentProperties(Project project) {
         project.task('createFabric8AgentProperties', type: CreateFabric8AgentPropertiesTask, dependsOn: 'createProfile') {
-            logger.debug("Creating CreateFabric8AgentProperties task")
+            project.logger.debug("Creating CreateFabric8AgentProperties task")
         }
-        project.task('createDependencies', type: CreateDependenciesTask, dependsOn: 'processResources') {
-            logger.debug("Creating CreateDependencies task")
+    }
+
+    def createDependencies(Project project) {
+        project.task('createDependencies', type: CreateDependenciesTask, dependsOn: 'createFabric8AgentProperties') {
+            project.logger.debug("Creating CreateDependencies task")
         }
     }
 

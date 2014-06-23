@@ -1,5 +1,6 @@
 package io.fabric8.gradle.task
 import io.fabric8.gradle.BaseSpecification
+import io.fabric8.gradle.plugin.Fabric8PluginConvention
 import io.fabric8.gradle.plugin.Fabric8PluginExtension
 /**
  * @author sigge
@@ -13,6 +14,8 @@ class CreateProfileTaskTest extends BaseSpecification {
         task = project.task('CreateProfileTask', type: CreateProfileTask) {
             project.ext.fabric8 = new Fabric8PluginExtension(profile: "my-test-profile")
         }
+        Fabric8PluginConvention convention = new Fabric8PluginConvention(project)
+        project.convention.plugins.put("fabric8", convention)
     }
 
     def "createProfileDir"() {

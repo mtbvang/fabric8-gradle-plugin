@@ -10,24 +10,28 @@ import groovy.transform.ToString
 @ToString
 class Fabric8PluginExtension {
 
-    String profile
+    String profile = ""
     String parentProfile = "default"
-    String group
-    String version
+    String group = ""
+    String version = ""
     String jolokiaUrl = "http://localhost:8181/jolokia"
     String features // space separated list
     String featureRepos // space separated list
-    int minInstanceCount
+    int minInstanceCount = 1
     String serverId
     String baseVersion
     String bundles // space separated list
     boolean upload = true
     boolean ignore = false
     boolean includeArtifact = true
+    @Deprecated // Use plugin convention
     String profileConfigDir = "src/main/fabric8"
     boolean includeReadMe = true
     String sampleDataDir = "src/main/resources/data"
     boolean includeSampleData = true
+
+    // Internal
+    File profileDir
 
 }
 

@@ -1,22 +1,27 @@
 package io.fabric8.gradle.task
 import groovy.json.JsonBuilder
 import io.fabric8.gradle.util.PluginUtil
-import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
-
 /**
  * @author sigge
  * @since 2014-06-11 20:16
  */
 class CreateDependenciesTask extends BaseTask {
 
-    @OutputFile
-    def File dependenciesFile = project.file(destDir.path + "/dependencies.json")
+    def File dependenciesFile
 
     @TaskAction
     def buildDependenciesFile() {
         logger.info("Creating profile dependencies")
         def fabric8 = project.fabric8
+        if(PluginUtil.determinePackaging(project)!="war") {
+            logger.debug("Not a war build, skipping")
+            return
+        }
+
+        def profileDependenciesDir = project.file(fabric8.profileDir.path + "/dependencies/" + project.group + "/")
+        profileDependenciesDir.mkdirs()
+        dependenciesFile = project.file(profileDependenciesDir.path+"/"+project.name+"-requirements.json")
 
         def dependencies = getDependencies(project)
         def dependenciesJson = buildDependenciedJson(fabric8, dependencies)

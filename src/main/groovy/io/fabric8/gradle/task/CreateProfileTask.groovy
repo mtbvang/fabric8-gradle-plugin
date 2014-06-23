@@ -11,7 +11,11 @@ class CreateProfileTask extends BaseTask {
     def createProfileDirectories() {
         def fabric8 = project.fabric8
         def profilePath = destDir.path + "/" + PluginUtil.parseProfilenameIntoPath(fabric8.profile)
-        logger.info("Creating profile directories: ${profilePath}")
+        // Setup profileDir in convention
+        fabric8.profileDir = project.file(profilePath)
+        logger.debug("Setting profileDir to $fabric8.profileDir")
+        logger.info("Using profile directories: ${profilePath}")
         if(!project.file(profilePath).exists()) project.file(profilePath).mkdirs()
     }
+
 }
