@@ -19,7 +19,7 @@ class CreateDependenciesTask extends BaseTask {
             return
         }
 
-        def profileDependenciesDir = project.file(fabric8.profileDir.path + "/dependencies/" + project.group + "/")
+        def profileDependenciesDir = project.file(getProfileDir(project) + "/dependencies/" + project.group + "/")
         profileDependenciesDir.mkdirs()
         dependenciesFile = project.file(profileDependenciesDir.path+"/"+project.name+"-requirements.json")
 

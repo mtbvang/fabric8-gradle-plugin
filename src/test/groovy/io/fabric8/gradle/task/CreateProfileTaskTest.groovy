@@ -15,7 +15,7 @@ class CreateProfileTaskTest extends BaseSpecification {
             project.ext.fabric8 = new Fabric8PluginExtension(profile: "my-test-profile")
         }
         Fabric8PluginConvention convention = new Fabric8PluginConvention(project)
-        project.convention.plugins.put("fabric8", convention)
+        project.convention.plugins.fabric8 = convention
     }
 
     def "createProfileDir"() {
@@ -23,6 +23,6 @@ class CreateProfileTaskTest extends BaseSpecification {
             task.createProfileDirectories()
         then:
             assert task instanceof CreateProfileTask
-            project.file(project.buildDir.path + "/my/test/profile").exists()
+            project.file(project.buildDir.path + "/generated/my/test/profile").exists()
     }
 }

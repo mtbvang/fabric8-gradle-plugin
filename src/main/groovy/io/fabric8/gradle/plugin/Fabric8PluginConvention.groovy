@@ -10,6 +10,7 @@ import org.gradle.api.Project
 class Fabric8PluginConvention {
 
     String fabric8SrcDir = "src/main/fabric8"
+    String profileGenDir = "generated"
 
     final Project project
 

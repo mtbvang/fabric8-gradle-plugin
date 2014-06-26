@@ -1,4 +1,6 @@
 package io.fabric8.gradle.task
+
+import io.fabric8.gradle.util.PluginUtil
 import org.gradle.api.DefaultTask
 /**
  * @author sigge
@@ -7,4 +9,7 @@ import org.gradle.api.DefaultTask
 abstract class BaseTask extends DefaultTask {
     def File destDir = project.buildDir
 
+    def getProfileDir(project) {
+        destDir.path + "/" + project.profileGenDir + "/" + PluginUtil.parseProfilenameIntoPath(project.fabric8.profile)
+    }
 }

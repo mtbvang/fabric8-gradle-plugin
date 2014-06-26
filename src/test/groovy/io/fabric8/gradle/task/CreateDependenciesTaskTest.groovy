@@ -1,6 +1,7 @@
 package io.fabric8.gradle.task
 import groovy.json.JsonSlurper
 import io.fabric8.gradle.BaseSpecification
+import io.fabric8.gradle.plugin.Fabric8PluginConvention
 import io.fabric8.gradle.plugin.Fabric8PluginExtension
 import org.gradle.api.plugins.WarPlugin
 import spock.lang.Shared
@@ -20,8 +21,10 @@ class CreateDependenciesTaskTest extends BaseSpecification {
 
     void setup() {
         project.ext {
-            fabric8 = new Fabric8PluginExtension(profile: profilename, group: "io.fabric8", version: "1.0-SNAPSHOT", profileDir: project.file(project.buildDir.path + "/my/test/profile"))
+            fabric8 = new Fabric8PluginExtension(profile: profilename, group: "io.fabric8", version: "1.0-SNAPSHOT", profileDir: project.file(project.buildDir.path + "/generated/my/test/profile"))
         }
+        Fabric8PluginConvention convention = new Fabric8PluginConvention(project)
+        project.convention.plugins.fabric8 = convention
         profileDependenciesPath = project.fabric8.profileDir.path + "/dependencies/" + project.group + "/" + project.name + "-requirements.json"
         configurations = project.configurations.create("compile")
         configurations = project.configurations.create("runtime")

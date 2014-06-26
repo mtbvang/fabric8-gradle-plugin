@@ -15,7 +15,7 @@ class CreateFabric8AgentPropertiesTask extends BaseTask {
     @TaskAction
     def createFabric8AgentPropertiesFile() {
         def fabric8 = project.fabric8
-        def profilePath = destDir.path + "/" + PluginUtil.parseProfilenameIntoPath(fabric8.profile)
+        def profilePath = getProfileDir(project)
         logger.debug("Creating io.fabric8.agent.properties file")
         def agentPropertiesFile = project.file("$profilePath/io.fabric8.agent.properties")
 
