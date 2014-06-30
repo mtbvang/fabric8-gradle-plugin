@@ -14,6 +14,11 @@ class Fabric8PluginTest extends BaseSpecification {
     def project
 
     def setup() {
+        System.properties.put("fabric8.server.url", "http://localhost:8181")
+        System.properties.put("fabric8.server.jolokia.path", "jolokia")
+        System.properties.put("fabric8.server.user", "admin")
+        System.properties.put("fabric8.server.password","admin")
+
         project = ProjectBuilder.builder().withName("fabric8").build()
         project.apply plugin: Fabric8Plugin
         project.fabric8 {

@@ -2,6 +2,9 @@ package io.fabric8.gradle.util
 import io.fabric8.gradle.BaseSpecification
 import org.gradle.api.tasks.bundling.War
 import spock.lang.Unroll
+
+import static io.fabric8.gradle.util.PluginUtil.splitIntoList
+
 /**
  * @author sigge
  * @since 2014-06-13 13:18
@@ -59,6 +62,17 @@ class PluginUtilTest extends BaseSpecification {
             }
         then:
             loadedProperties.sort() == [avalue11: 'a value 111', avalue12: 'a value 12', avalue21: 'a value 211', avalue22: 'a value 22', avalue31: 'a value 31', avalue32: 'a value 32']
+    }
+
+    @Unroll("#spaceSeparated should be split into #result")
+    def "test split list #spaceSeparated should equal list #result"() {
+        expect:
+            splitIntoList(spaceSeparated) == result
+        where:
+            spaceSeparated  | result
+            ""              | []
+            "value1 value2" | ["value1", "value2"]
+            "value1  value2"| ["value1", "value2"]
 
     }
 }

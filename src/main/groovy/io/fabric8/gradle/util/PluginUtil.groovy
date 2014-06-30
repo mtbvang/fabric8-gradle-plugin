@@ -53,4 +53,12 @@ class PluginUtil {
             properties.store(writer, null)
         }
     }
+
+    /**
+     * Splits a space delimited string into a list of values
+     * @param spaceSeparated
+     */
+    static def splitIntoList(String spaceSeparated) {
+        spaceSeparated.isEmpty() ? [] : spaceSeparated.replaceAll("\\s\\s", " ").split(" ")
+    }
 }

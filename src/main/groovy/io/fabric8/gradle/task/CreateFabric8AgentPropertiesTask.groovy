@@ -23,7 +23,7 @@ class CreateFabric8AgentPropertiesTask extends BaseTask {
         def templateReader = this.class.getResourceAsStream(templateUri).newReader()
         def profile = [
                 name: fabric8.profile,
-                parent: [profiles: fabric8.parentProfile]
+                parent: [profiles: fabric8.parentProfiles]
         ]
         def template = templateEngine.createTemplate(templateReader).make([profile: profile, packaging: PluginUtil.determinePackaging(project), groupId: project.group, artifactId: project.name, version: project.version])
         def text = template.toString()

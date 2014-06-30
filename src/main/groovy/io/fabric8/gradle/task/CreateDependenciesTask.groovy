@@ -33,7 +33,7 @@ class CreateDependenciesTask extends BaseTask {
         def builder = new JsonBuilder()
         builder {
             profileId fabric8.profile
-            parentProfiles fabric8.parentProfile
+            parentProfiles fabric8.parentProfiles
             rootDependency {
                 groupId fabric8.group
                 artifactId project.name
