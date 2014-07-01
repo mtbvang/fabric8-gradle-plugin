@@ -34,7 +34,7 @@ class Fabric8Plugin implements Plugin<Project>{
     }
 
     def createProfileDirectory(Project project) {
-        project.task('createProfile', type: CreateProfileTask, dependsOn: 'build') {
+        project.task('createProfile', type: CreateProfileTask, dependsOn: 'install') {
             project.logger.debug("Creating createProfile task")
         }
     }
