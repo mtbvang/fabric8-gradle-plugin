@@ -15,6 +15,30 @@ repositories {
     jcenter()
 }
 
+sourceSets {
+    integrationTest {
+        groovy.srcDir file('src/itest/groovy')
+        resources.srcDir file('src/itest/resources')
+        compileClasspath = sourceSets.main.output + configurations.testRuntime
+        runtimeClasspath = output + sourceSets.main.output + configurations.testRuntime
+    }
+}
+
+task integrationTest(type: Test) {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+check.dependsOn integrationTest
+//
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: )
+//        }
+//    }
+//}
+
 dependencies {
     compile gradleApi()
     compile localGroovy()

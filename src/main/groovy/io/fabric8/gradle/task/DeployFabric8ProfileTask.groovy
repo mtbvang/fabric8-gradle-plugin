@@ -1,6 +1,5 @@
 package io.fabric8.gradle.task
 import groovy.json.JsonBuilder
-import io.fabric8.gradle.util.JolokiaClient
 import org.gradle.api.tasks.TaskAction
 import org.jolokia.client.request.J4pExecRequest
 
@@ -9,18 +8,7 @@ import javax.management.ObjectName
  * @author sigge
  * @since 2014-06-11 20:16
  */
-class DeployFabric8ProfileTask extends BaseTask {
-
-    static String FABRIC_MBEAN = "io.fabric8:type=Fabric"
-
-    JolokiaClient client
-
-    void setClient(JolokiaClient client) {
-        if(!this.client) {
-            logger.debug("Setting client")
-            this.client = client
-        }
-    }
+class DeployFabric8ProfileTask extends JolokiaClientBaseTask {
 
     @TaskAction
     def deploy() {
